@@ -28,3 +28,17 @@ const quotes = [
         author: "Bill Gates"
     }
 ];
+
+const quoteElement = document.getElementById("quote");
+const authorElement = document.getElementById("author");
+const generateButton = document.getElementById("generate");
+
+function showRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    
+    quoteElement.textContent = randomQuote.text;
+    authorElement.textContent = `- ${randomQuote.author}`;
+}
+
+generateButton.addEventListener("click", showRandomQuote);
